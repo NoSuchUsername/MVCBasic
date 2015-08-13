@@ -10,14 +10,20 @@ namespace MVCBasic.Controllers
     public class StoreController : Controller
     {
         // GET: Store
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
-        public string Index()
+        public ActionResult Index()
         {
-            return "Hello from newly created STORE!!!";
+            var genres = new List<Genre>
+                {
+                    new Genre{Name="Disco"},
+                    new Genre{Name="Rock"},
+                    new Genre{Name="Pop"}
+                };
+            return View(genres);
         }
+        //public string Index()
+        //{
+        //    return "Hello from newly created STORE!!!";
+        //}
 
         // GET: /Store/Browse?genre=Disco 
         public ActionResult Browse(string genre)

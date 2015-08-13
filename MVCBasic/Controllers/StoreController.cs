@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MVCBasic.Models;
 
 namespace MVCBasic.Controllers
 {
@@ -19,14 +20,18 @@ namespace MVCBasic.Controllers
         }
 
         // GET: /Store/Browse?genre=Disco 
-        public string Browse(string genre)
+        public ActionResult Browse(string genre)
         {
-            return HttpUtility.HtmlEncode( "The genre is " + genre);
+            var genreModel = new Genre { Name = genre };
+            return View(genreModel);
+
+            //return HttpUtility.HtmlEncode( "The genre is " + genre);
         }
         // GET: /Store/Details/5
-        public string Details (int id)
+        public ActionResult Details (int id)
         {
-            return "Store id is: " + id;
+            var album = new Album { Title = "Album1 " + id };
+            return View(album);
         }
     }
 }

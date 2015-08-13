@@ -8,16 +8,16 @@ namespace MVCBasic.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
-
-        public string Index()
+        // GET: Home - the default controller function for this class
+        public ActionResult Index()
         {
-            return "Hello from newly created CONTROLLER!!!";
+            return View();
         }
+
+        //public string Index() //section which was testing string output
+        //{
+        //    return "Hello from newly created CONTROLLER!!!";
+        //}
 
     }
 }
